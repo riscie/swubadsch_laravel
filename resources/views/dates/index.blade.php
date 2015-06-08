@@ -15,11 +15,36 @@
                 @foreach($dates as $date)
                     <td>
                         @if($date->date == $today)
-                            Heute
+                            Today
                         @else
-                            {{date("D (d.m.Y)",strtotime($date->date))}}
-                            {{strftime('%A',strtotime($date->date))}}
-
+                            <?php // {{date("D (d.m.Y)",strtotime($date->date))}} does not work, nor does {{strftime('%A',strtotime($date->date))}} ?>
+                        <?php
+                            //This devastating code exists, because I was not able to handle the setlocale on my server so far.
+                            //FIXME!
+                            switch (strftime('%A',strtotime($date->date))) {
+                                case "Monday":
+                                    echo "Montag";
+                                    break;
+                                case "Tuesday":
+                                    echo "Dienstag";
+                                    break;
+                                case "Wednesday":
+                                    echo "Mittwoch";
+                                    break;
+                                case "Thursday":
+                                    echo "Donnerstag";
+                                    break;
+                                case "Friday":
+                                    echo "Freitag";
+                                    break;
+                                case "Saturday":
+                                    echo "Samstag";
+                                    break;
+                                case "Sunday":
+                                    echo "Sonntag";
+                                    break;
+                            }
+                        ?>
                         @endif
                     </td>
                 @endforeach

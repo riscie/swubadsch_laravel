@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'postmaster@sandbox806231fa3706494a9044297b3a4f9485.mailgun.org', 'name' => 'swubadsch-laravel'],
 
 	/*
 	|--------------------------------------------------------------------------
