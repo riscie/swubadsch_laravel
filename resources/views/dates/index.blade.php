@@ -10,7 +10,7 @@
                 <?php
                     $today = new DateTime();
                     $today = $today->format('Y-m-d');
-                    setlocale(LC_TIME, "de_DE"); //only necessary if the locale isn't already set
+                    setlocale(LC_TIME, "de_CH"); //only necessary if the locale isn't already set
                 ?>
                 @foreach($dates as $date)
                     <td>
