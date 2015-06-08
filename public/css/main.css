@@ -1,0 +1,51 @@
+body {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.signIn {
+    color: limegreen;
+}
+
+.signIn:hover {
+    color: green;
+}
+
+.signOut {
+    color: orangered;
+}
+
+.signOut:hover {
+    color: mediumvioletred;
+}
+
+.sendComment:hover {
+    color: limegreen;
+}
+
+.createUser:hover {
+    color: limegreen;
+}
+
+.today {
+    font-weight: bold;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.greyedOutCommentButton {
+    color: darkslategray;
+}
+
+p {
+    word-break: break-all;
+}
+
+td.opportunityTable {
+    max-width: 240px;
+    min-width: 240px;
+}
