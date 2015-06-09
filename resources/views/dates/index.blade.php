@@ -97,16 +97,20 @@
                 @foreach($dates as $date)
                 <td>
                     @foreach($date->comments as $comment)
-                        <div class="resultContainer">
+                        @if($comment->user->id == Auth::user()->id)
+                            <div class="resultContainer">
+                        @endif
                             <b>{{$comment->user->name}}:</b> {{$comment->text}}
-                            <div class="viewThisResult">
                                 @if($comment->user->id == Auth::user()->id)
+                                <div class="viewThisResult">
                                     {!! Form::open(['method' => 'delete','route' => ['comments.destroy','comment_id' => $comment->id], 'class' => 'commentDeleteForm']) !!}
-                                    <button type="submit" class="commentDeleteButton"><a class="mini-listing gray button"> <span class="glyphicon glyphicon-remove"></span></a></button>
+                                    <button type="submit" class="commentDeleteButton"><a class="mini-listing button"><span class="glyphicon glyphicon-remove-circle"></span></a></button>
                                     {!! Form::close() !!}
+                                </div>
                                 @endif
+                        @if($comment->user->id == Auth::user()->id)
                             </div>
-                        </div>
+                        @endif
 
                     @endforeach
                 </td>

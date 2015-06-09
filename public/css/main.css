@@ -71,23 +71,24 @@ td.opportunityTable {
 
 .resultContainer {
     position:relative;
+    max-width: 200px;
 }
 .viewThisResult {
     position:absolute;
-    bottom:0px;
-    left:-35px;
+    top:1px;
+    left:-30px;
 }
 
 
 /*button css*/
-.mini-listing.button, .mini-listing.button100 {
+.mini-listing.button {
     font-size: 14px;
     margin-top: -5px;
     padding: 5px 7px;
 }
 a.button {
     border-radius: 3px 3px 3px 3px;
-    color: #FFFFFF;
+    color: orangered;
     cursor: pointer;
     display: inline-block;
     font-weight: bold;
@@ -97,13 +98,13 @@ a.button {
     text-align: center;
     text-decoration: none;
 }
-.gray {
-    background: none repeat scroll 0 0 #AAAAAA;
-}
 
 .resultContainer .viewThisResult {
     display: none;
 }
 .resultContainer:hover .viewThisResult {
     display: inline;
+}
+.resultContainer:hover {
+    left:18px;
 }
