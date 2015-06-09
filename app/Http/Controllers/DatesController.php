@@ -50,6 +50,7 @@ class DatesController extends Controller {
         $date = Date::find($input['date_id']);
         $user = User::find($input['user_id']);
         $date->users()->save($user);
+        flash()->success('Teilnahme gespeichert');
         return Redirect::route('index');
 	}
 
@@ -97,6 +98,7 @@ class DatesController extends Controller {
         $input = Request::all();
         $date = Date::find($input['date_id']);
         $date->users()->detach($user_id);
+        flash()->success('Teilnahme entfernt');
         return Redirect::route('index');
 	}
 

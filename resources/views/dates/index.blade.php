@@ -15,7 +15,7 @@
                 @foreach($dates as $date)
                     <td>
                         @if($date->date == $today)
-                            Today
+                            Heute
                         @else
                             <?php // {{date("D (d.m.Y)",strtotime($date->date))}} does not work, nor does {{strftime('%A',strtotime($date->date))}} ?>
                         <?php

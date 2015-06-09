@@ -49,3 +49,8 @@ td.opportunityTable {
     max-width: 240px;
     min-width: 240px;
 }
+
+.flashMessage {
+    text-decoration: underline;
+    color: #ffffff;
+}
