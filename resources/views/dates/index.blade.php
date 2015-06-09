@@ -110,10 +110,10 @@
                 @foreach($dates as $date)
                     <td>
                         <?php // {!!  Form::open(['route' => ['comments.store', 'date_id' => $date->id,'date_id' => '5', 'user_id' => Auth::user()->id], 'method' => 'POST'])!!} ?>
-                        {!! Form::open(['method' => 'post','route' => ['comments.store','user_id' => Auth::user()->id, 'date_id' => $date->id]]) !!}
-                        {!! Form::textarea('text', null, ['class' => 'form-control', 'size' => '30x3']) !!}
+                        {!! Form::open(['method' => 'post','route' => ['comments.store','user_id' => Auth::user()->id, 'date_id' => $date->id],'id' => 'commentForm']) !!}
+                        {!! Form::textarea('text', null, ['class' => 'form-control', 'size' => '30x3','id' => 'commentText']) !!}
                         <br>
-                        <button type="submit"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
+                        <button type="submit" name="submit" value="submit"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
                         {!! Form::close() !!}
                     </td>
                 @endforeach

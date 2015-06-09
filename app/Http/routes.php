@@ -20,9 +20,20 @@ Route::controllers([
 
 //Only authenticated users can access these routes
 Route::group(array('middleware' => 'auth'), function() {
-    Route::resource('dates', 'DatesController');
-    Route::resource('comments', 'CommentsController');
-    Route::resource('/', 'DatesController');
+
+    //DateController
+    Route::get('dates',                 ['as' => 'dates.show', 'uses' => 'DatesController@index']);
+    Route::get('/',                     ['as' => 'index', 'uses' => 'DatesController@index']);
+    Route::post('dates',                ['as' => 'dates.store','uses' => 'DatesController@store']);
+    Route::delete('dates/{dates}',      ['as' => 'dates.destroy','uses' => 'DatesController@destroy']);
+
+    //CommentController
+    Route::post('comments',                ['as' => 'comments.store','uses' => 'CommentsController@store']);
+
+
+  //  Route::resource('dates', 'DatesController');
+   // Route::resource('comments', 'CommentsController');
+   // Route::resource('/', 'DatesController');
 });
 
 //to protect a single route we can use:
