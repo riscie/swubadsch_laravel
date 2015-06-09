@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SWU BadSch - Badminton Scheduler - beta</title>
+    <title>SWU BadSch - Badminton Scheduler - Laravel 5</title>
 
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css" rel="stylesheet">
@@ -30,7 +30,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler 2 - Laravel 5</a>
+				<a class="navbar-brand" href="#"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler - Laravel 5</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
