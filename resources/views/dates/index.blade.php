@@ -8,9 +8,8 @@
             <tr>
                 <th width="250"><strong>Datum</strong></th>
                 <?php
-                    $today = new DateTime();
-                    $today = $today->format('Y-m-d');
-                    setlocale(LC_TIME, "de_CH.utf8"); //only necessary if the locale isn't already set
+                $today = new DateTime();
+                $today = $today->format('Y-m-d');
                 ?>
                 @foreach($dates as $date)
                     <td>
@@ -98,7 +97,17 @@
                 @foreach($dates as $date)
                 <td>
                     @foreach($date->comments as $comment)
-                        <b>{{$comment->user->name}}:</b> {{$comment->text}}<br>
+                        <div class="resultContainer">
+                            <b>{{$comment->user->name}}:</b> {{$comment->text}}
+                            <div class="viewThisResult">
+                                @if($comment->user->id == Auth::user()->id)
+                                    {!! Form::open(['method' => 'delete','route' => ['comments.destroy','comment_id' => $comment->id], 'class' => 'commentDeleteForm']) !!}
+                                    <button type="submit" class="commentDeleteButton"><a class="mini-listing gray button"> <span class="glyphicon glyphicon-remove"></span></a></button>
+                                    {!! Form::close() !!}
+                                @endif
+                            </div>
+                        </div>
+
                     @endforeach
                 </td>
                 @endforeach
@@ -113,7 +122,7 @@
                         {!! Form::open(['method' => 'post','route' => ['comments.store','user_id' => Auth::user()->id, 'date_id' => $date->id],'id' => 'commentForm']) !!}
                         {!! Form::textarea('text', null, ['class' => 'form-control', 'size' => '30x3','id' => 'commentText']) !!}
                         <br>
-                        <button type="submit" name="submit" value="submit"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
+                        <button type="submit"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
                         {!! Form::close() !!}
                     </td>
                 @endforeach

@@ -28,12 +28,8 @@ Route::group(array('middleware' => 'auth'), function() {
     Route::delete('dates/{dates}',      ['as' => 'dates.destroy','uses' => 'DatesController@destroy']);
 
     //CommentController
-    Route::post('comments',                ['as' => 'comments.store','uses' => 'CommentsController@store']);
-
-
-  //  Route::resource('dates', 'DatesController');
-   // Route::resource('comments', 'CommentsController');
-   // Route::resource('/', 'DatesController');
+    Route::post('comments',                 ['as' => 'comments.store','uses' => 'CommentsController@store']);
+    Route::delete('comments/{comments}',    ['as' => 'comments.destroy','uses' => 'CommentsController@destroy']);
 });
 
 //to protect a single route we can use:

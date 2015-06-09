@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SWU BadSch - Badminton Scheduler - Laravel 5</title>
 
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">

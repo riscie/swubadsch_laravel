@@ -54,3 +54,56 @@ td.opportunityTable {
     text-decoration: underline;
     color: #ffffff;
 }
+
+.commentDeleteForm
+{
+    display: inline;
+}
+
+.commentDeleteButton {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+
+.resultContainer {
+    position:relative;
+}
+.viewThisResult {
+    position:absolute;
+    bottom:0px;
+    left:-35px;
+}
+
+
+/*button css*/
+.mini-listing.button, .mini-listing.button100 {
+    font-size: 14px;
+    margin-top: -5px;
+    padding: 5px 7px;
+}
+a.button {
+    border-radius: 3px 3px 3px 3px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 1;
+    padding: 9px 34px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+.gray {
+    background: none repeat scroll 0 0 #AAAAAA;
+}
+
+.resultContainer .viewThisResult {
+    display: none;
+}
+.resultContainer:hover .viewThisResult {
+    display: inline;
+}

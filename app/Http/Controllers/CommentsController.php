@@ -34,7 +34,7 @@ class CommentsController extends Controller {
         return Redirect::route('index');
 	}
 
-	
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -65,7 +65,10 @@ class CommentsController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        $comment = Comment::find($id);
+        $comment->delete();
+        flash()->success('Kommentar entfernt');
+        return Redirect::route('index');
 	}
 
 }
