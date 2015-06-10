@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
         $this->call('DatesSeeder');
         $this->call('UsersSeeder');
         $this->call('date_user_pivotSeeder');
+        $this->call('AvatarsSeeder');
 	}
 
 }

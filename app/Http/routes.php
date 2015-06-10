@@ -22,14 +22,17 @@ Route::controllers([
 Route::group(array('middleware' => 'auth'), function() {
 
     //DateController
-    Route::get('dates',                 ['as' => 'dates.show', 'uses' => 'DatesController@index']);
+    Route::get('dates',                 ['as' => 'dates.index', 'uses' => 'DatesController@index']);
     Route::get('/',                     ['as' => 'index', 'uses' => 'DatesController@index']);
     Route::post('dates',                ['as' => 'dates.store','uses' => 'DatesController@store']);
-    Route::delete('dates/{id}',      ['as' => 'dates.destroy','uses' => 'DatesController@destroy']);
+    Route::delete('dates/{id}',         ['as' => 'dates.destroy','uses' => 'DatesController@destroy']);
 
     //CommentController
-    Route::post('comments',                 ['as' => 'comments.store','uses' => 'CommentsController@store']);
-    Route::delete('comments/{id}',    ['as' => 'comments.destroy','uses' => 'CommentsController@destroy']);
+    Route::post('comments',             ['as' => 'comments.store','uses' => 'CommentsController@store']);
+    Route::delete('comments/{id}',      ['as' => 'comments.destroy','uses' => 'CommentsController@destroy']);
+
+    //AvatarsController
+    Route::get('avatars',                ['as' => 'avatars.index', 'uses' => 'AvatarsController@index']);
 });
 
 //to protect a single route we can use:
