@@ -55,7 +55,12 @@
                     @foreach($dates as $date)
                     <td>
                         @foreach($date->users as $user)
-                            <span class="glyphicon glyphicon-user"></span>&nbsp;{{$user->name}}<br>
+                            @if(!$user->avatar)
+                            <span class="glyphicon glyphicon-user"></span>
+                            @else
+                                <img src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
+                            @endif
+                            &nbsp;<b>{{$user->name}}</b><br>
                         @endforeach
                     </td>
                     @endforeach

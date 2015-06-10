@@ -14,7 +14,18 @@ class AvatarsController extends Controller {
 	 */
 	public function index()
 	{
-		$avatars = Avatar::all();
+		//$avatars = Avatar::all();
+
+        $path = asset('/avatarImages/');
+        $files = scandir($path);
+        $avatars = array();
+        foreach ($files as $key => $file) {
+            if(File::is(array('jpeg', 'jpg', 'png', 'gif'), $path.DS.$file))
+            {
+                $avatars[] = $files[$key];
+            }
+        }
+
         return view('avatars.index', compact('avatars'));
 	}
 

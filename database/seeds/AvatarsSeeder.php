@@ -17,10 +17,13 @@ class AvatarsSeeder extends Seeder {
 
         $avatars = array();
 
+
+        //need a special one for me after seeding! ^^
+        array_push($avatars,['filename' => '16x16_110.png', 'user_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
         //Creating file-paths here
-        for ($i=1; $i<=125;$i++)
+        for ($i=2; $i<=5;$i++)
         {
-            array_push($avatars,['filename' => '16x16_'.$i.'.png', 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+            array_push($avatars,['filename' => '16x16_'.$i.'.png', 'user_id' => $i, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
         }
 
 
