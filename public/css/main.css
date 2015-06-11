@@ -3,6 +3,8 @@ body {
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
+    background: url('/images/login_bg.jpg');
+    background-size: 100%;
 }
 
 .signIn {
@@ -107,4 +109,17 @@ a.button {
 }
 .resultContainer:hover {
     left:18px;
+}
+
+
+.panel-transparent {
+    background: none;
+}
+
+.panel-transparent .panel-heading{
+    background: rgba(122, 130, 136, 0.2)!important;
+}
+
+.panel-transparent .panel-body{
+    background: rgba(46, 51, 56, 0.2)!important;
 }

@@ -8,7 +8,7 @@
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cerulean/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/slate/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('/css/main.css') }}" rel="stylesheet">
 
     <!-- Fonts -->
