@@ -2,9 +2,7 @@
 @section('content')
     <h2>Badminton Termine</h2>
 
-    <?php //var_dump($dates); ?>
-
-        <table class="table">
+    <table class="table">
             <tr>
                 <th width="250"><strong>Datum</strong></th>
                 <?php
@@ -54,14 +52,20 @@
                 <th><strong>Teilnehmer</strong></th>
                     @foreach($dates as $date)
                     <td>
-                        @foreach($date->users as $user)
+
+                        <table>
+
+                            @foreach($date->users as $user)
+                                <tr class="spaceUnder"><td>
                             @if(!$user->avatar)
-                            <span class="glyphicon glyphicon-user"></span>
+                                <img width="64" src="{{ asset('/avatarImages/unknown.jpg') }}">
                             @else
-                                <img src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
+                                <img width="64" src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
                             @endif
-                            &nbsp;<b>{{$user->name}}</b><br>
+                            &nbsp;<span class="username">{{$user->name}}</span>
+                                </td></tr>
                         @endforeach
+                            </table>
                     </td>
                     @endforeach
 
@@ -131,7 +135,7 @@
                         {!! Form::open(['method' => 'post','route' => ['comments.store','user_id' => Auth::user()->id, 'date_id' => $date->id],'id' => 'commentForm']) !!}
                         {!! Form::textarea('text', null, ['class' => 'form-control', 'size' => '30x3','id' => 'commentText']) !!}
                         <br>
-                        <button type="submit"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
+                        <button type="submit" class="btn btn-default sendComment"><span class="glyphicon glyphicon-saved"></span> <strong>Absenden</strong></button>
                         {!! Form::close() !!}
                     </td>
                 @endforeach

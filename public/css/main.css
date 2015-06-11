@@ -3,7 +3,15 @@ body {
     padding-bottom: 15px;
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.auth {
     background: url('/images/login_bg.jpg');
+    background-size: 100%;
+}
+
+.main {
+    background: url('/images/main_bg.png');
     background-size: 100%;
 }
 
@@ -123,3 +131,22 @@ a.button {
 .panel-transparent .panel-body{
     background: rgba(46, 51, 56, 0.2)!important;
 }
+
+.avatar{
+    background: darkseagreen;
+}
+
+.avatar:hover {
+    border: 1px solid darkseagreen;
+    box-shadow: 0px 0px 0px 1px #eee;
+}
+
+.username {
+    font-weight: bold;
+    font-size: larger;
+}
+tr.spaceUnder > td
+{
+    padding-bottom: 4px;
+}
+

@@ -21,7 +21,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+
+@if(strpos(Request::url(),'auth') !== false)
+    <body class="auth">
+@endif
+<body class="main">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -47,8 +51,8 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
-								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-                                <li><a href="{{ url('/avatars') }}">Avatar wählen</a></li>
+                                <li><a href="{{ url('/avatars') }}">Avatar</a></li>
+                                <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>
 						</li>
 					@endif
@@ -59,6 +63,7 @@
 
 
     @yield('content')
+
 
 	<!-- Scripts -->
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>

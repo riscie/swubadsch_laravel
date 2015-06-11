@@ -3,7 +3,12 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Avatar;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 class AvatarsController extends Controller {
 
@@ -14,19 +19,17 @@ class AvatarsController extends Controller {
 	 */
 	public function index()
 	{
-		//$avatars = Avatar::all();
+        $directory = "avatarImages";
+		$avatars = File::allFiles($directory);
+        $avatarPaths = array();
 
-        $path = asset('/avatarImages/');
-        $files = scandir($path);
-        $avatars = array();
-        foreach ($files as $key => $file) {
-            if(File::is(array('jpeg', 'jpg', 'png', 'gif'), $path.DS.$file))
-            {
-                $avatars[] = $files[$key];
-            }
+        foreach ($avatars as $file) {
+            $file = (string)$file;
+            array_push($avatarPaths,pathinfo($file));
         }
-
-        return view('avatars.index', compact('avatars'));
+        $avatarPaths = json_decode(json_encode($avatarPaths), FALSE);
+        //return $avatarPaths;
+        return view('avatars.index', compact('avatarPaths'));
 	}
 
 	/**
@@ -44,9 +47,17 @@ class AvatarsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($filename)
 	{
-		//
+       $user = User::findOrFail(Auth::user()->id);
+       if ($user->avatar){
+            $user->avatar->update(['filename' => $filename]);
+        }
+        else{
+            $avatar = Avatar::create(['filename' => $filename, 'user_id' => $user->id]);
+        }
+        flash()->success('Avatar gespeichert');
+        return Redirect::route('index');
 	}
 
 	/**
