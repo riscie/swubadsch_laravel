@@ -44,7 +44,7 @@
 
                     @include('flash::message')
                     @if ($errors->any())
-                        <li class="active flashMessage" id="navbarFlash"><a id="transparent"><span class="alert alert-danger">
+                        <li class="active flashMessage" id="flasher"><a id="transparent"><span class="alert alert-danger">
                                Kommentar darf nicht leer sein.
                             </span></a></li>
                     @endif
