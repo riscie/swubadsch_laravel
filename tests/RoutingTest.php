@@ -1,6 +1,6 @@
 <?php
 
-class RoutingTests extends TestCase {
+class RoutingTest extends TestCase {
 
 	/**
 	 * A basic functional test example.
