@@ -20,6 +20,9 @@ class AvatarsSeeder extends Seeder {
 
         //need a special one for me after seeding! ^^
         array_push($avatars,['filename' => 'Gemini.jpg', 'user_id' => 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        array_push($avatars,['filename' => 'Succubus.jpg', 'user_id' => 2, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        array_push($avatars,['filename' => 'Empath.jpg', 'user_id' => 3, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
+        array_push($avatars,['filename' => 'Ellonia.jpg', 'user_id' => 6, 'created_at' => new DateTime, 'updated_at' => new DateTime]);
         //Creating file-paths here
 
         /*

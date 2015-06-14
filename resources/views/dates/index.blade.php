@@ -11,6 +11,7 @@
                 ?>
                 @foreach($dates as $date)
                     <td>
+                        <b>
                         @if($date->date == $today)
                             Heute
                         @else
@@ -41,7 +42,7 @@
                                     echo "Sonntag";
                                     break;
                             }
-                        ?>
+                        ?></b>
                         @endif
                     </td>
                 @endforeach
@@ -58,9 +59,9 @@
                             @foreach($date->users as $user)
                                 <tr class="spaceUnder"><td>
                             @if(!$user->avatar)
-                                <img width="64" src="{{ asset('/avatarImages/unknown.jpg') }}">
+                                <img width="42" src="{{ asset('/avatarImages/unknown.jpg') }}">
                             @else
-                                <img width="64" src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
+                                <img width="42" src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
                             @endif
                             &nbsp;<span class="username">{{$user->name}}</span>
                                 </td></tr>

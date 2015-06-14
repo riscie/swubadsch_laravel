@@ -7,6 +7,6 @@
                 @endforeach
 
 
-
+    <br><br><b><a href="/">Zurück</a></b>
 
 @endsection

@@ -22,7 +22,7 @@
 	<![endif]-->
 </head>
 
-@if(strpos(Request::url(),'auth') !== false)
+@if(strpos(Request::url(),'auth') !== false || strpos(Request::url(),'password') !==false)
     <body class="auth">
 @endif
 <body class="main">
@@ -35,7 +35,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler - Laravel 5</a>
+				<a class="navbar-brand" href="/"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler - Laravel 5</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

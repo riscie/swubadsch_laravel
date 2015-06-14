@@ -46,8 +46,7 @@ class DatesSeeder extends Seeder {
 			['id' => 5, 'date' => $todayPlusThree, 'created_at' => new DateTime, 'updated_at' => new DateTime],
 			['id' => 6, 'date' => $todayPlusFour, 'created_at' => new DateTime, 'updated_at' => new DateTime],
 			['id' => 8, 'date' => $todayPlusFive, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-			['id' => 9, 'date' => $todayPlusSeven, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-			['id' => 10, 'date' => $todayPlusEight, 'created_at' => new DateTime, 'updated_at' => new DateTime]
+			['id' => 9, 'date' => $todayPlusSix, 'created_at' => new DateTime, 'updated_at' => new DateTime],
         );
 
         // Uncomment to run the seeder

@@ -121,7 +121,8 @@ a.button {
 
 
 .panel-transparent {
-    background: none;
+    background: rgb(58, 63, 68);  /* Fall-back for browsers that don't support rgba */
+    background: rgba(58, 63, 68, .5);
 }
 
 .panel-transparent .panel-heading{
