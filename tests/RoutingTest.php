@@ -1,34 +1,29 @@
 <?php
 
-class RoutingTest extends TestCase {
+class RoutingTests extends TestCase {
 
 	/**
 	 * A basic functional test example.
 	 *
 	 * @return void
 	 */
-	public function testHomeRoute()
+	public function testAuthRoutes()
 	{
-        $this->call('GET', '/');
+        $this->call('GET', '/auth/register');
         $this->assertResponseOk();
-	}
 
-    public function testDatesRoute()
+        $this->call('GET', '/auth/login');
+        $this->assertResponseOk();
+
+    }
+
+
+
+    public function testPasswordRoutes()
     {
-        $this->call('GET', 'dates');
+        $this->call('GET', '/password/email');
         $this->assertResponseOk();
     }
 
-    public function testCommentsRoute()
-    {
-        $this->call('GET', 'comments');
-        $this->assertResponseOk();
-    }
-
-    public function testAvatarssRoute()
-    {
-        $this->call('GET', 'avatars');
-        $this->assertResponseOk();
-    }
 
 }
