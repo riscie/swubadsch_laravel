@@ -34,6 +34,7 @@ class CommentsController extends Controller {
 	{
         $input = Request::all();
         Comment::Create(array('user_id' => Auth::user()->id, 'text'=> $input['text'], 'date_id'=>$input['date_id']));
+        flash()->success('Kommentar gespeichert');
         return Redirect::route('index');
 	}
 
