@@ -19,9 +19,7 @@ class CommentsSeeder extends Seeder {
             ['user_id' => '1', 'date_id' => 2, 'text' => 'Spielt heute sonst noch wer?', 'created_at' => new DateTime, 'updated_at' => new DateTime],
             ['user_id' => '1', 'date_id' => 3, 'text' => 'Wer fährt? Ich bin morgen mit dem Zug da...', 'created_at' => new DateTime, 'updated_at' => new DateTime],
             ['user_id' => '3', 'date_id' => 3, 'text' => 'Ich fahre!', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['user_id' => '3', 'date_id' => 4, 'text' => 'Second comment ever!', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['user_id' => '4', 'date_id' => 4, 'text' => 'Another comment on the same date!', 'created_at' => new DateTime, 'updated_at' => new DateTime],
-            ['user_id' => '2', 'date_id' => 8, 'text' => 'Freitgas-Sport! Who\'s in?', 'created_at' => new DateTime, 'updated_at' => new DateTime]
+            ['user_id' => '2', 'date_id' => 7, 'text' => 'Freitgas-Sport! Who\'s in?', 'created_at' => new DateTime, 'updated_at' => new DateTime]
         );
 
         // Uncomment to run the seeder

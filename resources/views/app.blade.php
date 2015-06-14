@@ -43,7 +43,11 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     @include('flash::message')
-
+                    @if ($errors->any())
+                        <li class="active flashMessage" id="navbarFlash"><a id="transparent"><span class="alert alert-danger">
+                               Kommentar darf nicht leer sein.
+                            </span></a></li>
+                    @endif
 						@if (Auth::guest())
 						<li><a href="{{ url('/auth/login') }}">Login</a></li>
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>

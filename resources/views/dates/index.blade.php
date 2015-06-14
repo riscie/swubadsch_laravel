@@ -140,7 +140,7 @@
                         {!! Form::close() !!}
                     </td>
                 @endforeach
-            </tr>
+                </tr>
         </table>
 
 @endsection

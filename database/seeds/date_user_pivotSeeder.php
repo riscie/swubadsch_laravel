@@ -22,7 +22,7 @@ class date_user_pivotSeeder extends Seeder {
             ['date_id' => 2, 'user_id' => '1'],
             ['date_id' => 3, 'user_id' => '2'],
             ['date_id' => 3, 'user_id' => '6'],
-            ['date_id' => 8, 'user_id' => '2'],
+            ['date_id' => 7, 'user_id' => '2'],
             ['date_id' => 3, 'user_id' => '1'],
             ['date_id' => 3, 'user_id' => '3'],
         );

@@ -5,6 +5,8 @@ use App\Http\Controllers\Controller;
 use App\Comment;
 
 //use Illuminate\Http\Request;
+use App\Http\Requests\CreateCommentRequest;
+use Illuminate\Support\Facades\Auth;
 use Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -22,15 +24,16 @@ class CommentsController extends Controller {
 	}
 
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param CreateCommentRequest $request
+     * @return Response
+     */
+	public function store(CreateCommentRequest $request)
 	{
         $input = Request::all();
-        Comment::Create(array('user_id' => $input['user_id'], 'text'=> $input['text'], 'date_id'=>$input['date_id']));
+        Comment::Create(array('user_id' => Auth::user()->id, 'text'=> $input['text'], 'date_id'=>$input['date_id']));
         return Redirect::route('index');
 	}
 

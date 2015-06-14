@@ -7,6 +7,7 @@ use App\User;
 
 
 //use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -39,7 +40,7 @@ class DatesController extends Controller {
 	{
         $input = Request::all();
         $date = Date::find($input['date_id']);
-        $user = User::find($input['user_id']);
+        $user = User::find(Auth::user()->id);
         $date->users()->save($user);
         flash()->success('Teilnahme gespeichert');
         return Redirect::route('index');
@@ -68,7 +69,7 @@ class DatesController extends Controller {
 	{
         $input = Request::all();
         $date = Date::find($input['date_id']);
-        $date->users()->detach($user_id);
+        $date->users()->detach(Auth::user()->id);
         flash()->success('Teilnahme entfernt');
         return Redirect::route('index');
 	}
