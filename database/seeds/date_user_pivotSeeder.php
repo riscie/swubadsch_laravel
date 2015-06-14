@@ -14,9 +14,6 @@ class date_user_pivotSeeder extends Seeder {
     {
         // wipe the table clean before populating
         DB::table('date_user')->delete();
-		
-		
-
 
         $pivots = array(
             ['date_id' => 2, 'user_id' => '1'],
