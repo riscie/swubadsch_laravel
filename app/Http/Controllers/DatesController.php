@@ -22,11 +22,11 @@ class DatesController extends Controller {
 	{
 
         $period = getCurrentDates();
-        $dates = Date::with('users.avatar')->with('comments.user')->where('date', '>=', $period[0]->format('Y-m-d'))->where('date', '<=', end($period)->format('Y-m-d'))->orderBy('date')->get();
         foreach ($period as $day)
         {
             Date::firstOrCreate(array('date' => $day->format('Y-m-d')));
         }
+        $dates = Date::with('users.avatar')->with('comments.user')->where('date', '>=', $period[0]->format('Y-m-d'))->where('date', '<=', end($period)->format('Y-m-d'))->orderBy('date')->get();
         return view('dates.index', compact('dates'));
 	}
 
