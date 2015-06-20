@@ -110,7 +110,7 @@
                         @if($comment->user->id == Auth::user()->id)
                             <div class="resultContainer">
                         @endif
-                            <b>{{$comment->user->name}}:</b> {{$comment->text}}
+                            <b>{{$comment->user->name}}:</b> {{$comment->text}}<br>
                                 @if($comment->user->id == Auth::user()->id)
                                 <div class="viewThisResult">
                                     {!! Form::open(['method' => 'delete','route' => ['comments.destroy','comment_id' => $comment->id], 'class' => 'commentDeleteForm']) !!}
