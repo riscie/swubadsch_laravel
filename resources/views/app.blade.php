@@ -53,7 +53,7 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img width="30" src="{{ asset('/avatarImages/'.Auth::user()->avatar->filename) }}"> {{ Auth::user()->name }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img class="avatar-frame-navbar" width="30" src="{{ asset('/avatarImages/'.Auth::user()->avatar->filename) }}"> {{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/avatars') }}">Avatar</a></li>
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>

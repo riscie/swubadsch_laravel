@@ -61,7 +61,7 @@
                             @if(!$user->avatar)
                                 <img width="42" src="{{ asset('/avatarImages/unknown.jpg') }}">
                             @else
-                                <img width="42" src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
+                                <img class="avatar-frame" width="42" src="{{ asset('/avatarImages/'.$user->avatar->filename) }}">
                             @endif
                             &nbsp;<span class="username">{{$user->name}}</span>
                                 </td></tr>
