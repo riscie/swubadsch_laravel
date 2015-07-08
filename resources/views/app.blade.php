@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SWU BadSch - Badminton Scheduler - Laravel 5</title>
+    <title>SWU BadSch - Badminton Scheduler</title>
 
     <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 	<link href="{{ asset('/css/app.css') }}" rel="stylesheet">
@@ -35,7 +35,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler - Laravel 5</a>
+				<a class="navbar-brand" href="/"><strong>SWU </strong> <strong>Bad</strong>minton <strong>Sch</strong>eduler</a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -53,7 +53,7 @@
 						<li><a href="{{ url('/auth/register') }}">Register</a></li>
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><img width="30" src="{{ asset('/avatarImages/'.Auth::user()->avatar->filename) }}"> {{ Auth::user()->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/avatars') }}">Avatar</a></li>
                                 <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
