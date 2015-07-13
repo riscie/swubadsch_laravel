@@ -8,7 +8,8 @@
 
 
 <h3>Upload your own Avatar</h3>
-{!! Form::file('image') !!}
+
+{!!// Form::file('image') !!}
 
     <br><br><b><a href="/">Zurück</a></b>
 @endsection
