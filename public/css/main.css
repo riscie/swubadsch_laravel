@@ -145,6 +145,7 @@ a.button {
 
 .avatar{
     background: darkseagreen;
+    margin: 1px;
 }
 
 .avatar:hover {
