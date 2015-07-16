@@ -34,6 +34,8 @@ Route::group(array('middleware' => 'auth'), function() {
     //AvatarsController
     Route::get('avatars',                ['as' => 'avatars.index', 'uses' => 'AvatarsController@index']);
     Route::get('avatars/{filename}',     ['as' => 'avatars.store','uses' => 'AvatarsController@store']);
+    Route::post('avatars',               ['as' => 'avatars.upload','uses' => 'AvatarsController@upload']);
+
 });
 
 //to protect a single route we can use:

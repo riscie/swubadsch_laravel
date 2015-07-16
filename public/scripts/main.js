@@ -4,5 +4,3 @@ setTimeout(function()
         $('#flasher').fadeOut('fast');
     }, 1500
 );
-
-

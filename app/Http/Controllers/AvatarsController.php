@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
+use Input;
+use Storage;
 
 class AvatarsController extends Controller {
 
@@ -103,5 +105,38 @@ class AvatarsController extends Controller {
 	{
 		//
 	}
+
+		public function upload()
+	{
+
+		if (Input::hasFile('avatar')){
+			$file = Input::file('avatar');	
+		
+			if(substr($file->getMimeType(), 0, 5) == 'image') {
+    					
+				$file->move(public_path() . '/avatarImages', time() . '_' . $file->getClientOriginalName());
+        		flash()->success('Upload durchgeführt');
+				return Redirect::route('avatars.index');		
+			
+			}
+
+			else
+			{
+				flash()->error('Falsches Dateiformat.');
+				return Redirect::route('avatars.index');	
+			}
+
+		
+
+
+		}
+		
+
+
+
+
+		
+	}
+
 
 }

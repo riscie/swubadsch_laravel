@@ -11,7 +11,10 @@ class AppServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		//
+		 $this->publishes([
+		 	'vendor/kartik-v/bootstrap-fileinput/css/fileinput.min.css' => public_path('/css/fileinput.min.css'),
+			'vendor/kartik-v/bootstrap-fileinput/js/fileinput.min.js' => public_path('/scripts/fileinput.min.js'),
+		 	], 'public');
 	}
 
 	/**
